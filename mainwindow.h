@@ -26,6 +26,8 @@ private slots:
     void onOnOffChangeState(int state);
     void onSizeSliderValueChanged(int value);
     void onDefaultColorButtonClick();
+    void onOnColorButtonClick();
+    void onOffColorButtonClick();
 };
 
 #endif // MAINWINDOW_H

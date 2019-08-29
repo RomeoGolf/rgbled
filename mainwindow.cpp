@@ -37,6 +37,10 @@ QBoxLayout * MainWindow::createControlPanel()
     QPushButton *selectDefaultColorButton = new QPushButton("Select default color...");
     connect(selectDefaultColorButton, SIGNAL(clicked()),
             this, SLOT(onDefaultColorButtonClick()));
+    connect(selectOnColorButton, SIGNAL(clicked()),
+            this, SLOT(onOnColorButtonClick()));
+    connect(selectOffColorButton, SIGNAL(clicked()),
+            this, SLOT(onOffColorButtonClick()));
     QSlider *sizeSlider = new QSlider();
     sizeSlider->setMinimum(15);
     sizeSlider->setMaximum(300);
@@ -71,11 +75,30 @@ void MainWindow::onSizeSliderValueChanged(int value)
 
 void MainWindow::onDefaultColorButtonClick()
 {
-    //rgbLed->setLedColor(Qt::red);
     const QColorDialog::ColorDialogOptions options = QFlag(0);
-    const QColor color = QColorDialog::getColor(Qt::blue, this, "Select Default Color", options);
-
+    const QColor color =
+        QColorDialog::getColor(Qt::blue, this, "Select Default Color", options);
     if (color.isValid()) {
         rgbLed->setLedColor(color);
+    }
+}
+
+void MainWindow::onOnColorButtonClick()
+{
+    const QColorDialog::ColorDialogOptions options = QFlag(0);
+    const QColor color =
+            QColorDialog::getColor(Qt::blue, this, "Select On Color", options);
+    if (color.isValid()) {
+        rgbLed->setLedOnColor(color);
+    }
+}
+
+void MainWindow::onOffColorButtonClick()
+{
+    const QColorDialog::ColorDialogOptions options = QFlag(0);
+    const QColor color =
+            QColorDialog::getColor(Qt::blue, this, "Select Off Color", options);
+    if (color.isValid()) {
+        rgbLed->setLedOffColor(color);
     }
 }
