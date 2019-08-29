@@ -34,7 +34,7 @@ QBoxLayout * MainWindow::createControlPanel()
             this, SLOT(onOnOffChangeState(int)));
     QPushButton *selectOnColorButton = new QPushButton("Select On color...");
     QPushButton *selectOffColorButton = new QPushButton("Select Off color...");
-    QPushButton *selectDefaultColorButton = new QPushButton("Select Off color...");
+    QPushButton *selectDefaultColorButton = new QPushButton("Select default color...");
     QSlider *sizeSlider = new QSlider();
     sizeSlider->setMinimum(15);
     sizeSlider->setMaximum(250);
