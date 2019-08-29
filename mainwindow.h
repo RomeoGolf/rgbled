@@ -6,6 +6,7 @@
 #include <QCheckBox>
 #include <QPushButton>
 #include <QSlider>
+#include <QColorDialog>
 #include <rgbled.h>
 
 class MainWindow : public QMainWindow
@@ -24,6 +25,7 @@ private slots:
     void onOnOffEnableChangeState(int state);
     void onOnOffChangeState(int state);
     void onSizeSliderValueChanged(int value);
+    void onDefaultColorButtonClick();
 };
 
 #endif // MAINWINDOW_H

@@ -35,6 +35,8 @@ QBoxLayout * MainWindow::createControlPanel()
     QPushButton *selectOnColorButton = new QPushButton("Select On color...");
     QPushButton *selectOffColorButton = new QPushButton("Select Off color...");
     QPushButton *selectDefaultColorButton = new QPushButton("Select default color...");
+    connect(selectDefaultColorButton, SIGNAL(clicked()),
+            this, SLOT(onDefaultColorButtonClick()));
     QSlider *sizeSlider = new QSlider();
     sizeSlider->setMinimum(15);
     sizeSlider->setMaximum(300);
@@ -65,4 +67,15 @@ void MainWindow::onOnOffChangeState(int state)
 void MainWindow::onSizeSliderValueChanged(int value)
 {
     rgbLed->setFixedWidth(value);
+}
+
+void MainWindow::onDefaultColorButtonClick()
+{
+    //rgbLed->setLedColor(Qt::red);
+    const QColorDialog::ColorDialogOptions options = QFlag(0);
+    const QColor color = QColorDialog::getColor(Qt::blue, this, "Select Default Color", options);
+
+    if (color.isValid()) {
+        rgbLed->setLedColor(color);
+    }
 }
