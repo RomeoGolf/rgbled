@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QBoxLayout>
+#include <QCheckBox>
 
 class MainWindow : public QMainWindow
 {
@@ -10,6 +12,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private:
+    QBoxLayout *createControlPanel();
 };
 
 #endif // MAINWINDOW_H
