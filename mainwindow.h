@@ -6,6 +6,8 @@
 #include <QCheckBox>
 #include <QPushButton>
 
+#include <rgbled.h>
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -15,6 +17,7 @@ public:
     ~MainWindow();
 
 private:
+    RgbLed *rgbLed;
     QBoxLayout *createControlPanel();
 };
 

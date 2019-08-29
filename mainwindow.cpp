@@ -3,8 +3,15 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    rgbLed = new RgbLed();
+    QBoxLayout *rgbLedLayout = new QHBoxLayout();
+    rgbLedLayout->addWidget(rgbLed);
+    QWidget *backWidget = new QWidget();
+    backWidget->setFixedHeight(300);
+    backWidget->setLayout(rgbLedLayout);
     QBoxLayout *mainLayout = new QVBoxLayout();
     mainLayout->addLayout(createControlPanel());
+    mainLayout->addWidget(backWidget);
     this->setCentralWidget(new QWidget());
     this->centralWidget()->setLayout(mainLayout);
     mainLayout->setSizeConstraint(QLayout::SetFixedSize);

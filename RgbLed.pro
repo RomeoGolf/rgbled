@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    rgbled.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    rgbled.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
