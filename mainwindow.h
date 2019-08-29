@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QBoxLayout>
 #include <QCheckBox>
+#include <QPushButton>
 
 class MainWindow : public QMainWindow
 {
