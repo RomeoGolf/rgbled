@@ -23,6 +23,7 @@ private:
 private slots:
     void onOnOffEnableChangeState(int state);
     void onOnOffChangeState(int state);
+    void onSizeSliderValueChanged(int value);
 };
 
 #endif // MAINWINDOW_H

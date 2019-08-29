@@ -37,9 +37,11 @@ QBoxLayout * MainWindow::createControlPanel()
     QPushButton *selectDefaultColorButton = new QPushButton("Select default color...");
     QSlider *sizeSlider = new QSlider();
     sizeSlider->setMinimum(15);
-    sizeSlider->setMaximum(250);
+    sizeSlider->setMaximum(300);
     sizeSlider->setValue(50);
     sizeSlider->setOrientation(Qt::Horizontal);
+    connect(sizeSlider, SIGNAL(valueChanged(int)),
+            this, SLOT(onSizeSliderValueChanged(int)));
     QBoxLayout *result = new QHBoxLayout();
     result->addWidget(checkBoxOnOffEnable);
     result->addWidget(checkBoxOnOff);
@@ -58,4 +60,9 @@ void MainWindow::onOnOffEnableChangeState(int state)
 void MainWindow::onOnOffChangeState(int state)
 {
     rgbLed->setStateOn(state == Qt::Checked);
+}
+
+void MainWindow::onSizeSliderValueChanged(int value)
+{
+    rgbLed->setFixedWidth(value);
 }
