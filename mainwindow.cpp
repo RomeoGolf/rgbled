@@ -75,6 +75,7 @@ QBoxLayout * MainWindow::createControlPanel()
     result->addWidget(selectOnColorButton);
     result->addWidget(selectOffColorButton);
     result->addWidget(selectDefaultColorButton);
+    result->addWidget(new QLabel(" Size:"));
     result->addWidget(sizeSlider);
     return result;
 }

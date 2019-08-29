@@ -28,6 +28,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <QPushButton>
 #include <QSlider>
 #include <QColorDialog>
+#include <QLabel>
 #include <rgbled.h>
 
 class MainWindow : public QMainWindow
