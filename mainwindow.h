@@ -5,7 +5,7 @@
 #include <QBoxLayout>
 #include <QCheckBox>
 #include <QPushButton>
-
+#include <QSlider>
 #include <rgbled.h>
 
 class MainWindow : public QMainWindow

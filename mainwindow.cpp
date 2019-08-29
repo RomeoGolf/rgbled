@@ -4,6 +4,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     rgbLed = new RgbLed();
+    rgbLed->setFixedWidth(50);
     QBoxLayout *rgbLedLayout = new QHBoxLayout();
     rgbLedLayout->addWidget(rgbLed);
     QWidget *backWidget = new QWidget();
@@ -29,11 +30,17 @@ QBoxLayout * MainWindow::createControlPanel()
     QPushButton *selectOnColorButton = new QPushButton("Select On color...");
     QPushButton *selectOffColorButton = new QPushButton("Select Off color...");
     QPushButton *selectDefaultColorButton = new QPushButton("Select Off color...");
+    QSlider *sizeSlider = new QSlider();
+    sizeSlider->setMinimum(15);
+    sizeSlider->setMaximum(250);
+    sizeSlider->setValue(50);
+    sizeSlider->setOrientation(Qt::Horizontal);
     QBoxLayout *result = new QHBoxLayout();
     result->addWidget(checkBoxOnOffEnable);
     result->addWidget(checkBoxOnOff);
     result->addWidget(selectOnColorButton);
     result->addWidget(selectOffColorButton);
     result->addWidget(selectDefaultColorButton);
+    result->addWidget(sizeSlider);
     return result;
 }
