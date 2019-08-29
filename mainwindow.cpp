@@ -26,7 +26,12 @@ MainWindow::~MainWindow()
 QBoxLayout * MainWindow::createControlPanel()
 {
     QCheckBox *checkBoxOnOffEnable = new QCheckBox("On/Off enable");
+    checkBoxOnOffEnable->setCheckState(Qt::Checked);
+    connect(checkBoxOnOffEnable, SIGNAL(stateChanged(int)),
+            this, SLOT(onOnOffEnableChangeState(int)));
     QCheckBox *checkBoxOnOff = new QCheckBox("On/Off");
+    connect(checkBoxOnOff, SIGNAL(stateChanged(int)),
+            this, SLOT(onOnOffChangeState(int)));
     QPushButton *selectOnColorButton = new QPushButton("Select On color...");
     QPushButton *selectOffColorButton = new QPushButton("Select Off color...");
     QPushButton *selectDefaultColorButton = new QPushButton("Select Off color...");
@@ -43,4 +48,14 @@ QBoxLayout * MainWindow::createControlPanel()
     result->addWidget(selectDefaultColorButton);
     result->addWidget(sizeSlider);
     return result;
+}
+
+void MainWindow::onOnOffEnableChangeState(int state)
+{
+    rgbLed->setUseState(state == Qt::Checked);
+}
+
+void MainWindow::onOnOffChangeState(int state)
+{
+    rgbLed->setStateOn(state == Qt::Checked);
 }

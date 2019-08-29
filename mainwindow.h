@@ -19,6 +19,10 @@ public:
 private:
     RgbLed *rgbLed;
     QBoxLayout *createControlPanel();
+
+private slots:
+    void onOnOffEnableChangeState(int state);
+    void onOnOffChangeState(int state);
 };
 
 #endif // MAINWINDOW_H
