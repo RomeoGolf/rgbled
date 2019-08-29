@@ -35,7 +35,7 @@ class RgbLed : public QWidget
 {
     Q_OBJECT
 public:
-    explicit RgbLed(QWidget *parent = 0);
+    explicit RgbLed(QWidget *parent = nullptr);
     void setLedColor(const QColor &color);
     void setLedOnColor(const QColor &color);
     void setLedOffColor(const QColor &color);
