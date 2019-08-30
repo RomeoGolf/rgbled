@@ -12,13 +12,13 @@ RgbLed прорисовывается с применением принципо
 
 ![RgbLed][RgbLed]
 
-[RgbLed]: http:// ""
+[RgbLed]: http://romeogolf.github.io/images/misc/rgbled.png "RGB LED"
 
 Пример применения:
 
 ![RgbLed][RgbLedSample]
 
-[RgbLedSample]: http:// ""
+[RgbLedSample]: http://romeogolf.github.io/images/misc/example.png "Пример"
 
 
 ## Начало работы
